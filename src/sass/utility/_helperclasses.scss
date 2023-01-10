@@ -1,0 +1,71 @@
+@use "../abstracts" as a;
+
+.flex {
+	display: flex;
+	gap: var(--gap, a.rem(16));
+}
+
+.grid {
+	display: grid;
+	gap: var(--gap, a.rem(16));
+}
+
+//Spacing * + * can also be written as :where(not:(:first-child))
+.flow {
+	& > * + * {
+		margin-top: var(--flowSpace, a.rem(16));
+	}
+
+	&__small {
+		--flowSpace: 0.75rem;
+	}
+}
+
+.hidden {
+	display: none;
+}
+
+.dBlock {
+	display: block;
+}
+
+.container {
+	padding-inline: a.em(32);
+	max-width: a.rem(1280);
+	margin-inline: auto;
+}
+
+.srOnly {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	padding: 0;
+	margin: -1px;
+	overflow: hidden;
+	clip: rect(0, 0, 0, 0);
+	white-space: nowrap;
+	border: 0;
+}
+
+.upperCase {
+	text-transform: uppercase;
+}
+
+.numberedTitle {
+	font-family: a.$ff-sansCond;
+	font-size: a.$fs500;
+	text-transform: uppercase;
+	letter-spacing: a.$letterSpacing1;
+
+	span {
+		margin-right: a.em(8);
+		font-weight: 700;
+		color: a.$clr-white;
+		opacity: 0.25;
+	}
+
+	@include a.breakpointsUp(small) {
+		justify-self: left;
+		margin-block-start: 2rem;
+	}
+}

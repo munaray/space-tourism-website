@@ -1,0 +1,25 @@
+@use "../abstracts" as a;
+
+.bg-dark {
+	background-color: a.$clr-dark;
+}
+.bg-accent {
+	background-color: a.$clr-light;
+}
+.bg-white {
+	background-color: a.$clr-white;
+}
+
+.bg-transparent {
+	background-color: transparent;
+}
+
+.text-dark {
+	color: a.$clr-dark;
+}
+.text-accent {
+	color: a.$clr-light;
+}
+.text-white {
+	color: a.$clr-white;
+}

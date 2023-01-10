@@ -1,0 +1,96 @@
+@use "../abstracts" as a;
+
+.ff-serif {
+	font-family: a.$ff-serif;
+}
+
+.ff-sansCond {
+	font-family: a.$ff-sansCond;
+}
+
+.ff-sansNormal {
+	font-family: a.$ff-sansNormal;
+}
+
+.letterSpacing1 {
+	letter-spacing: a.$letterSpacing1;
+}
+
+.letterSpacing2 {
+	letter-spacing: a.$letterSpacing2;
+}
+
+.letterSpacing3 {
+	letter-spacing: a.$letterSpacing3;
+}
+
+.fs900 {
+	font-size: a.$fs900;
+}
+
+.fs800 {
+	font-size: a.$fs800;
+
+	@include a.mediumFont {
+		font-size: a.$fs800-0;
+	}
+
+	@include a.largeFont {
+		font-size: a.$fs800-1;
+	}
+}
+
+.fs700 {
+	font-size: a.$fs700;
+
+	@include a.mediumFont {
+		font-size: a.$fs700-0;
+	}
+
+	@include a.largeFont {
+		font-size: a.$fs700-1;
+	}
+}
+
+.fs600 {
+	font-size: a.$fs600;
+
+	@include a.mediumFont {
+		font-size: a.$fs600-0;
+	}
+
+	@include a.mediumFont {
+		font-size: a.$fs600-1;
+	}
+}
+
+.fs500 {
+	font-size: a.$fs500;
+}
+
+.fs400 {
+	font-size: a.$fs400;
+
+	@include a.mediumFont {
+		font-size: a.$fs400-0;
+	}
+
+	@include a.largeFont {
+		font-size: a.$fs400-1;
+	}
+}
+
+.fs300 {
+	font-size: a.$fs300;
+}
+
+.fs200 {
+	font-size: a.$fs200;
+}
+
+.fs900,
+.fs800,
+.fs700,
+.fs600 {
+	line-height: 1.1;
+}

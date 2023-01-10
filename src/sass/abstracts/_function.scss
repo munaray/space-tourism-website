@@ -1,0 +1,17 @@
+@use "sass:math";
+
+@function rem($px) {
+	@if math.is-unitless($px) {
+		@return math.div($px, 16) + rem;
+	} @else {
+		@error "Do not add units when using rem() function use numbers only";
+	}
+}
+
+@function em($px) {
+	@if math.is-unitless($px) {
+		@return math.div($px, 16) + em;
+	} @else {
+		@error "Do not add units when using em() function use numbers only";
+	}
+}

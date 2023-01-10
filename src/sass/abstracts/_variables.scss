@@ -1,0 +1,51 @@
+@use "function" as f;
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;700&family=Barlow:ital,wght@0,400;1,700&family=Bellefair&display=swap");
+
+$ff-serif: "Bellefair", serif;
+$ff-sansCond: "Barlow Condensed", sans-serif;
+$ff-sansNormal: "Barlow", sans-serif;
+
+$clr-dark: hsl(230 35% 7%);
+$clr-light: hsl(231 77% 90%);
+$clr-white: hsl(0 0% 100%);
+
+//first font decleration
+$fs900: clamp(f.rem(80), 8vw + f.rem(16), f.rem(150));
+$fs800: f.rem(56);
+$fs700: f.rem(24);
+$fs600: f.rem(16);
+$fs500: f.rem(28);
+$fs400: f.rem(15);
+$fs300: f.rem(16);
+$fs200: f.rem(14);
+
+//second font decleration @ min-width: 580;
+$fs800-0: f.rem(80);
+$fs700-0: f.rem(40);
+$fs600-0: f.rem(24);
+$fs400-0: f.rem(16);
+
+//third font decleration @ min-width:770;
+$fs800-1: f.rem(100);
+$fs700-1: f.rem(56);
+$fs600-1: f.rem(32);
+$fs400-1: f.rem(18);
+
+$letterSpacing1: 4.75px;
+$letterSpacing2: 2.7px;
+$letterSpacing3: 2.35px;
+
+//break-points
+
+$breakpointsUp: (
+	"small": f.em(580),
+	"medium": f.em(770),
+	"large": f.em(1024),
+	"xlarge": f.em(1440),
+);
+
+$breakpointsDown: (
+	"small": f.em(579.98),
+	"medium": f.em(769.98),
+	"large": f.em(1023.98),
+);

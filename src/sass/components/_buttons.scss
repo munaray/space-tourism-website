@@ -1,0 +1,105 @@
+@use "../abstracts" as a;
+
+.largeBtn {
+	font-size: a.rem(32);
+	position: relative;
+	padding: 0 a.em(32);
+	text-decoration: none;
+	display: inline-grid;
+	z-index: 1;
+	aspect-ratio: 1;
+	place-content: center;
+	border-radius: 50%;
+
+	&::after {
+		content: "";
+		position: absolute;
+		background: a.$clr-white;
+		z-index: -1;
+		opacity: 0;
+		width: 100%;
+		height: 100%;
+		border-radius: inherit;
+		transition: opacity linear 0.5s, transform 0.75s ease-in-out;
+	}
+
+	&:hover::after,
+	&:focus::after {
+		opacity: 0.15;
+		transform: scale(1.5);
+	}
+}
+
+.ulIndicators {
+	& > * {
+		cursor: pointer;
+		padding: var(--underlineSpace, 0.5rem) 0;
+		border: 0;
+		border-bottom: 0.2rem solid hsla(0, 0%, 100%, 0);
+		background-color: transparent;
+
+		&:hover,
+		&:focus {
+			border-color: hsla(0, 0%, 100%, 0.5);
+		}
+	}
+
+	& > .active,
+	& > [aria-selected="true"] {
+		color: a.$clr-white;
+		border-bottom: 0.2rem solid a.$clr-white;
+	}
+
+	@include a.breakpointsDown(small) {
+		&.primaryNav {
+			& > .active,
+			& > [aria-selected="true"] {
+				border-bottom: 0;
+			}
+		}
+	}
+}
+
+.tabLists {
+	--gap: 2rem;
+}
+
+.dotIndicators {
+	& > * {
+		border: 0;
+		cursor: pointer;
+		border-radius: 50%;
+		aspect-ratio: 1;
+		padding: 0.5em;
+		background-color: hsla(0, 0%, 100%, 0.25);
+
+		&:hover,
+		&:focus {
+			background-color: hsla(0, 0%, 100%, 0.5);
+		}
+	}
+
+	& > [aria-selected="true"] {
+		background-color: a.$clr-white;
+	}
+}
+
+.numberIndicators {
+	& > * {
+		height: a.rem(100);
+		width: a.rem(100);
+		border-radius: 50%;
+		background-color: transparent;
+		border-color: hsla(0, 0%, 100%, 0.25);
+
+		&:hover,
+		&:focus {
+			border-color: hsla(0, 0%, 100%, 0.5);
+		}
+	}
+
+	& > [aria-selected="true"] {
+		background-color: a.$clr-white;
+		color: a.$clr-dark;
+	}
+}

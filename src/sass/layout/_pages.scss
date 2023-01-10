@@ -1,0 +1,88 @@
+@use "../abstracts/" as a;
+
+.home {
+	background: url("../../assets/home/background-home-mobile.jpg") bottom
+		center/ cover;
+
+	@include a.breakpointsUp(small) {
+		background: url("../../assets/home/background-home-tablet.jpg") bottom
+			center/ cover;
+	}
+
+	@include a.breakpointsUp(medium) {
+		background: url("../../assets/home/background-home-desktop.jpg") bottom
+			center/ cover;
+	}
+}
+
+.logoIcon {
+	margin: a.rem(24) clamp(a.rem(24), 5vw, a.rem(56));
+}
+
+.primaryHeader {
+	justify-content: space-between;
+	align-items: center;
+
+	@include a.breakpointsUp(medium) {
+		&::before {
+			content: "";
+			display: block;
+			position: relative;
+			width: 100%;
+			height: 1px;
+			z-index: 20;
+			order: 1;
+			background: hsla(0, 0%, 100%, 0.25);
+		}
+
+		nav {
+			order: 2;
+			margin-left: -2rem;
+		}
+	}
+}
+
+.skipToContent {
+	background-color: a.$clr-white;
+	color: a.$clr-dark;
+	padding: a.em(8) a.em(16);
+	position: absolute;
+	z-index: 100;
+	transform: translateY(-100%);
+	text-decoration: none;
+	transition: transform 0.5s ease-in;
+
+	&:focus {
+		transform: translateY(0%);
+	}
+}
+
+.destinations {
+	background: url("../../assets/destination/background-destination-mobile.jpg")
+		center center / cover;
+
+	@include a.breakpointsUp(small) {
+		background: url("../../assets/destination/background-destination-tablet.jpg")
+			center center/ cover;
+	}
+
+	@include a.breakpointsUp(medium) {
+		background: url("../../assets/destination/background-destination-desktop.jpg")
+			center center/ cover;
+	}
+}
+
+.crews {
+	background: url("../../assets/crew/background-crew-mobile.jpg") top center /
+		cover;
+
+	@include a.breakpointsUp(small) {
+		background: url("../../assets/crew/background-crew-tablet.jpg") top
+			center/ cover;
+	}
+
+	@include a.breakpointsUp(medium) {
+		background: url("../../assets/crew/background-crew-desktop.jpg") top
+			center/ cover;
+	}
+}

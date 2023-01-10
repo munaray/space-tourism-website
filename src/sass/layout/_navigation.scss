@@ -1,0 +1,90 @@
+@use "../abstracts/" as a;
+
+.primaryNav {
+	--gap: clamp(2rem, 5vw, 4rem);
+	--underlineSpace: 2rem;
+	margin: 0;
+	padding: 0;
+	background: hsla(230, 35%, 7%, 0.95);
+
+	@supports (backdrop-filter: blur(a.rem(16))) {
+		background: hsla(0, 0%, 100%, 0.05);
+		backdrop-filter: blur(a.rem(28));
+	}
+
+	& a > span {
+		font-weight: 700;
+		margin-right: a.em(8);
+	}
+	@include a.breakpointsDown(small) {
+		--underlineSpace: 0.5rem;
+		padding: min(20rem, 15vh) 2rem;
+		margin: 0;
+		z-index: 10;
+		flex-direction: column;
+		position: fixed;
+		inset: 0 0 0 35%;
+		transform: translateX(100%);
+		transition: transform 0.5s ease-in-out;
+
+		&[displayMobileNav="true"] {
+			transform: translateX(0);
+		}
+
+		&__list {
+			transform: translateX(100vw);
+			transition: transform 0.75s ease-in-out;
+
+			&[listItem="true"] {
+				transform: translateX(0);
+			}
+		}
+	}
+
+	@include a.breakpointsUp(small) {
+		padding-inline: clamp(a.rem(48), 10vw, a.rem(112));
+		@include a.breakpointsDown(medium) {
+			& a > span {
+				display: none;
+			}
+		}
+	}
+
+	@include a.breakpointsUp(medium) {
+		margin-block: a.rem(32);
+	}
+}
+
+.mobileNav {
+	visibility: hidden;
+
+	@include a.breakpointsDown(small) {
+		visibility: visible;
+		position: absolute;
+		right: 1rem;
+		top: 2rem;
+		z-index: 20;
+		background: transparent;
+		border: none;
+		outline: none;
+		background-image: url("../../assets/shared/icon-hamburger.svg");
+		background-repeat: no-repeat;
+		width: a.rem(24);
+		aspect-ratio: 1;
+
+		&[aria-expanded="true"] {
+			background-image: url("../../assets/shared/icon-close.svg");
+		}
+
+		&:focus-visible {
+			outline: 2px solid white;
+			outline-offset: 3px;
+		}
+	}
+}
+
+@for $i from 1 through 4 {
+	.primaryNav__list:nth-child(#{$i}) {
+		transition-delay: ($i * 0.1s) + 0.2s;
+	}
+}

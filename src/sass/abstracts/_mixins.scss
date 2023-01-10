@@ -1,0 +1,25 @@
+@use "variables" as v;
+
+@mixin breakpointsUp($size) {
+	@media (min-width: map-get(v.$breakpointsUp, $size)) {
+		@content;
+	}
+}
+
+@mixin breakpointsDown($size) {
+	@media (max-width: map-get(v.$breakpointsDown, $size)) {
+		@content;
+	}
+}
+
+@mixin mediumFont {
+	@media (min-width: 36em) {
+		@content;
+	}
+}
+
+@mixin largeFont {
+	@media (min-width: 48em) {
+		@content;
+	}
+}
