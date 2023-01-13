@@ -86,8 +86,8 @@
 
 .numberIndicators {
 	& > * {
-		height: a.rem(100);
-		width: a.rem(100);
+		padding-inline: a.em(24);
+		aspect-ratio: 1;
 		border-radius: 50%;
 		background-color: transparent;
 		border-color: hsla(0, 0%, 100%, 0.25);
@@ -101,5 +101,11 @@
 	& > [aria-selected="true"] {
 		background-color: a.$clr-white;
 		color: a.$clr-dark;
+	}
+
+	@include a.breakpointsUp(medium){
+		& > *{
+			padding-inline: a.em(40);
+		}
 	}
 }

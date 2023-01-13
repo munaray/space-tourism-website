@@ -19,6 +19,10 @@
 	&__small {
 		--flowSpace: 0.75rem;
 	}
+
+	&__columnFlow > * + *{
+		margin-left: var(--columnSpace, a.rem(0));
+	}
 }
 
 .hidden {

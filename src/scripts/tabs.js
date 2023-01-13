@@ -1,4 +1,4 @@
-const tabList = document.querySelector('[role="tablists"]');
+const tabList = document.querySelector('[role="tablist"]');
 const tabs = document.querySelectorAll('[role="tab"]');
 
 let tabFocus = 0;
