@@ -26,6 +26,13 @@
 	}
 }
 
+@supports(scrollbar-color: red blue){
+	*{
+		scrollbar-color: hsla(231, 77%, 90%, .2) a.$clr-dark;
+		scrollbar-width: thin;
+	}
+}
+
 body,
 h1,
 h2,
@@ -49,6 +56,8 @@ p {
 
 html {
 	scroll-behavior: smooth;
+	scrollbar-gutter: stable;
+
 }
 
 ul {
