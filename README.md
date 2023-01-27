@@ -111,7 +111,7 @@ learn a lot about layout and accesibility
 
 ### Continued development
 
-Going forward I wanted to focus on frontend design frameworks.
+Going forward I wanted to focus on frontend developing frameworks.
 
 ### Useful resources
 
@@ -120,9 +120,9 @@ Going forward I wanted to focus on frontend design frameworks.
 
 ## Author
 
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/munahCode)
-- Twitter - [@yourusername](https://www.twitter.com/Munaray_)
+- Frontend Mentor - [@munahCode](https://www.frontendmentor.io/profile/munahCode)
+- Twitter - [@Munaray_](https://www.twitter.com/Munaray_)
 
 ## Acknowledgments
 
-A big thanks to frontend mentor for making this challenge available and super free. Also a huge thanks to CSS guru Kelvin Powell for guiding.
+A big thanks to frontend mentor for making this challenge available and super free. Also a huge thanks to CSS guru Kelvin Powell and freeCodeCamp.
