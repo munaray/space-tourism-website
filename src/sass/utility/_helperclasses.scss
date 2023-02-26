@@ -51,6 +51,12 @@
 	border: 0;
 }
 
+.stickyTop {
+	position: sticky;
+	top: 0;
+	z-index: 1020;
+}
+
 .upperCase {
 	text-transform: uppercase;
 }
