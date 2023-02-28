@@ -16,7 +16,7 @@
     "watch": "npm-run-all --parallel watch:*",
     "serve": "browser-sync start --server public --files public",
     "start": "npm-run-all copy --parallel watch serve",
-    "build": "npm-run-all copy:html build:*",
+    "build": "npm-run-all copy:html copy:assets build:*",
     "postbuild:css": "postcss public/css/*.css -u autoprefixer cssnano -r --no-map",
     "postbuild:js": "uglifyjs-folder src/scripts -eo public/scripts",
     "postbuild": "npm-run-all postbuild:css postbuild:js"
